@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from '../screens/HomeScreen';
 import AboutScreen from '../screens/AboutScreen';
 import DashboardScreen from '../screens/DashboardScreen';
+import MeetMeScreen from '../screens/MeetMeScreen';
 import MessagingScreen from '../screens/MessagingScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 
@@ -32,6 +33,9 @@ function MainTabNavigator() {
               break;
             case 'Profile':
               iconName = focused ? 'person' : 'person-outline'; // Example icons for Profile
+              break;
+            case 'Meet Me': // Add the case for Meet Me screen
+              iconName = focused ? 'map' : 'map-outline'; // Using map icons for Meet Me
               break;
             default:
               iconName = 'ban'; // A default icon in case none of the above
@@ -82,14 +86,46 @@ function MainTabNavigator() {
               headerRightContainerStyle: {
                 paddingRight: 15, 
               },
-              tabBarLabel: 'Dashboard', // Specify label if needed
+              tabBarLabel: 'Dashboard', 
             })}
           />
+          <Tab.Screen
+            name="Meet Me"
+            component={MeetMeScreen}
+            options={({ navigation }) => ({
+              headerRight: () => (
+                <Button
+                  onPress={() => {
+                    signOut();
+                  }}
+                  title="Logout"
+                  color="gray"
+                />
+              ),
+              headerRightContainerStyle: {
+                paddingRight: 15, 
+              },
+              tabBarLabel: 'Meet Me', 
+            })}
+          />
+
           <Tab.Screen 
             name="Profile" 
             component={ProfileScreen} 
             options={{
-              tabBarLabel: 'Profile', // Specify label if needed
+              headerRight: () => (
+                <Button
+                  onPress={() => {
+                    signOut();
+                  }}
+                  title="Logout"
+                  color="gray"
+                />
+              ),
+              tabBarLabel: 'Profile', 
+              headerRightContainerStyle: {
+                paddingRight: 15, 
+              },
             }} 
           />
         </>

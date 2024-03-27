@@ -4,6 +4,10 @@ import { NavigationContainer, DefaultTheme, DarkTheme, createNavigationContainer
 import ModalStackScreen from './navigation/ModalStackScreen';
 import { ThemeProvider, useTheme } from './context/ThemeContext'; // Adjust the path as necessary
 import { AuthProvider } from './context/AuthContext';
+import { LogBox } from 'react-native';
+
+//ignore looping warning
+LogBox.ignoreAllLogs(true);
 
 export const navigationRef = createNavigationContainerRef();
 

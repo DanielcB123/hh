@@ -22,8 +22,8 @@ const DashboardScreen = ({ navigation }) => {
 
   return (
     <ScrollView style={[styles.container, { backgroundColor: isDarkTheme ? '#333' : '#f3f4f6' }]}>
-      <Text style={[styles.text, { color: isDarkTheme ? '#ffffff' : '#000000' }]}>Welcome to the Dashboard!</Text>
-      {/* <MapView
+      <Text style={[styles.text, { color: isDarkTheme ? '#ffffff' : '#000000' }]}>Find Your Meet Spot!</Text>
+      <MapView
         style={styles.map}
         initialRegion={{
           latitude: 37.78825,
@@ -39,7 +39,7 @@ const DashboardScreen = ({ navigation }) => {
         value={userAddress}
         placeholder="Enter your address"
         placeholderTextColor="#666"
-      /> */}
+      />
       {/* <Picker
         selectedValue={selectedFriend}
         onValueChange={(itemValue, itemIndex) => setSelectedFriend(itemValue)}
